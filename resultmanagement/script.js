@@ -4,7 +4,7 @@ const SPREADSHEET_ID = "1mHdnccmmZcgWf-Fe0JVA79ojnAXgqxNErclYu6aVJ2A";
 // Fetch data from a specific sheet
 async function fetchData(sheetName) {
   try {
-    const url = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${sheetName}?key=${API_KEY}`;
+    const url = https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${sheetName}?key=${API_KEY};
     const response = await fetch(url);
     if (!response.ok) {
       throw new Error("Failed to fetch data from Google Sheets.");
@@ -51,7 +51,7 @@ async function displayWelcomeSection(student) {
   const welcomeSection = document.getElementById("welcome-section");
   if (!student) return;
 
-  welcomeSection.innerHTML = `
+  welcomeSection.innerHTML = 
     <h2 style="color: #007BFF;">Welcome, ${student.name}!</h2>
     <p><strong>Roll ID:</strong> ${student.roll_id}</p>
     <p><strong>College:</strong> ${student.college_name}</p>
@@ -59,7 +59,7 @@ async function displayWelcomeSection(student) {
     <p><strong>Batch Time:</strong> ${student.batch_time}</p>
     <hr>
     <h3 style="color: #4CAF50;">Your Results:</h3>
-  `;
+  ;
 }
 
 // Fetch and filter student-specific results
@@ -107,12 +107,12 @@ async function getStudentResults(roll_id) {
 function renderResults(student, results) {
   displayWelcomeSection(student);
 
-  const tableBody = document.getElementById("results-table").getElementsByTagName('tbody')[0];
+  const tableBody = document.getElementById("results-table");
   tableBody.innerHTML = "";
 
   results.forEach((result, index) => {
     const rowClass = index % 2 === 0 ? "gray-row" : "";
-    const row = `
+    const row = 
       <tr class="${rowClass}">
         <td>${result.examName}</td>
         <td>${result.examDate}</td>
@@ -124,7 +124,7 @@ function renderResults(student, results) {
         <td>${result.highestMarks}</td>
         <td>${result.percentage}%</td>
       </tr>
-    `;
+    ;
     tableBody.innerHTML += row;
   });
 
@@ -141,7 +141,7 @@ function renderProgressChart(performanceData) {
   window.progressChart = new Chart(ctx, {
     type: "line",
     data: {
-      labels: Array.from({ length: performanceData.length }, (_, i) => `Exam ${i + 1}`),
+      labels: Array.from({ length: performanceData.length }, (_, i) => Exam ${i + 1}),
       datasets: [
         {
           label: "Performance (%)",
@@ -173,7 +173,7 @@ function renderProgressChart(performanceData) {
       plugins: {
         tooltip: {
           callbacks: {
-            label: (context) => `${context.raw.toFixed(2)}%`
+            label: (context) => ${context.raw.toFixed(2)}%
           }
         }
       }
@@ -209,11 +209,11 @@ document.getElementById("login-btn").addEventListener("click", async () => {
   }
 });
 
+
 // Logout event listener
 document.getElementById("logout-btn").addEventListener("click", () => {
   document.getElementById("login-section").classList.remove("hidden");
   document.getElementById("dashboard").classList.add("hidden");
   document.getElementById("phone").value = "";
   document.getElementById("password").value = "";
-  window.location.reload();
-});
+}); s
