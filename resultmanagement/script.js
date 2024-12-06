@@ -107,7 +107,7 @@ async function getStudentResults(roll_id) {
 function renderResults(student, results) {
   displayWelcomeSection(student);
 
-  const tableBody = document.getElementById("results-table");
+  const tableBody = document.getElementById("results-table").getElementsByTagName('tbody')[0];
   tableBody.innerHTML = "";
 
   results.forEach((result, index) => {
@@ -209,11 +209,11 @@ document.getElementById("login-btn").addEventListener("click", async () => {
   }
 });
 
-
 // Logout event listener
 document.getElementById("logout-btn").addEventListener("click", () => {
   document.getElementById("login-section").classList.remove("hidden");
   document.getElementById("dashboard").classList.add("hidden");
   document.getElementById("phone").value = "";
   document.getElementById("password").value = "";
+  window.location.reload();
 });
