@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Bootstrap 5 CSS for icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Login Section -->
+   <h1>PREPARATION OF HSC & MODEL TEST RESULT</h1>
+  <div id="login-section">
+    <h2>Student Login</h2>
+    <input id="phone" type="text" placeholder="Phone Number">
+    <input id="password" type="password" placeholder="Password">
+    <button id="login-btn"><i class="bi bi-box-arrow-in-right"></i> Login</button>
+    <p>ALL rights reserved By Abid Jafar</p>
+  </div>
+
+  <!-- Dashboard Section -->
+  <div id="dashboard" class="hidden">
+    <!-- Welcome Section -->
+    <div id="welcome-section">
+      <h1>PREPARATION OF HSC & MODEL TEST 2025</h1>
+      <h2>Welcome, <span id="student-name"></span></h2>
+      <p>HSC Batch: <span id="batch_time"></span></p>
+      <p>Batch Time: <span id="time"></span></p>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div id="navigation-bar">
+      <button id="notice-btn"><i class="bi bi-bell"></i> Notices</button>
+      <button id="logout-btn" class="logout-btn"><i class="bi bi-box-arrow-right"></i> Logout</button>
+    </div>
+
+    <!-- Results Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Exam Name</th>
+          <th>Exam Date</th>
+          <th>MCQ Marks</th>
+          <th>CQ Marks</th>
+          <th>Total Marks</th>
+          <th>Obtained Marks</th>
+          <th>Rank</th>
+          <th>Highest Marks</th>
+          <th>Percentage</th>
+        </tr>
+      </thead>
+      <tbody id="results-table">
+        <!-- Data rows will be populated here -->
+      </tbody>
+    </table>
+
+    <!-- Progress Chart -->
+    <canvas id="progress-chart" width="400" height="200"></canvas>
+
+    <!-- Print Results Button -->
+    <button id="print-results-btn"><i class="bi bi-printer"></i> Print Results</button>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Redirect to Notice Page
+    document.getElementById('notice-btn').addEventListener('click', function () {
+      window.location.href = 'notice.html'; // Redirect to the Notice page
+    });
+
+    // Print Results functionality
+    document.getElementById('print-results-btn').addEventListener('click', function () {
+      window.print();
+    });
+  </script>
+</body>
+</html>
