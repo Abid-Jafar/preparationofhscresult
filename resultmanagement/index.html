@@ -4,20 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Dashboard</title>
-  <link rel="stylesheet" href="styles.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    /* Add your custom styles here */
+    .hidden {
+      display: none;
+    }
+    .gray-row {
+      background-color: #f7f7f7;
+    }
+    /* Example for chart styling */
+    canvas {
+      max-width: 600px;
+      margin: 20px auto;
+    }
+  </style>
 </head>
 <body>
+
   <div id="login-section">
-    <h2>Student Login</h2>
-    <input type="text" id="phone" placeholder="Enter Phone Number">
-    <input type="password" id="password" placeholder="Enter Password">
+    <h2>Login</h2>
+    <input type="text" id="phone" placeholder="Phone Number">
+    <input type="password" id="password" placeholder="Password">
     <button id="login-btn">Login</button>
   </div>
 
   <div id="dashboard" class="hidden">
+    <h2>Dashboard</h2>
     <div id="welcome-section"></div>
-    <table>
+    <table id="results-table">
       <thead>
         <tr>
           <th>Exam Name</th>
@@ -31,12 +46,13 @@
           <th>Percentage</th>
         </tr>
       </thead>
-      <tbody id="results-table"></tbody>
+      <tbody></tbody>
     </table>
     <canvas id="progress-chart"></canvas>
     <button id="logout-btn">Logout</button>
   </div>
 
   <script src="script.js"></script>
+
 </body>
 </html>
